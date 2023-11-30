@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
-  standalone: true,
-  imports: [CommonModule],
+  standalone: false,
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })

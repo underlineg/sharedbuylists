@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-itens',
-  standalone: true,
-  imports: [CommonModule],
+  standalone: false,
   templateUrl: './itens.component.html',
   styleUrl: './itens.component.scss'
 })

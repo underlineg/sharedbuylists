@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HistoricComponent } from './historic/historic.component';
-import { ItensComponent } from './itens/itens.component';
-import { LoginComponent } from './login/login.component';
+import { SharedModule } from './app.module';
 
 
 
@@ -11,10 +9,7 @@ import { LoginComponent } from './login/login.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, 
-    HistoricComponent,
-    ItensComponent,
-    LoginComponent],
+  imports: [CommonModule, RouterOutlet, SharedModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

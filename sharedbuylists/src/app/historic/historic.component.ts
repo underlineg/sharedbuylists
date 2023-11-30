@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-historic',
-  standalone: true,
-  imports: [CommonModule],
+  standalone: false,
   templateUrl: './historic.component.html',
   styleUrl: './historic.component.scss'
 })
