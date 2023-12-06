@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 
 @Component({
   selector: 'app-itens',
@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   templateUrl: './itens.component.html',
   styleUrl: './itens.component.scss'
 })
-export class ItensComponent {
 
-}
+export class ItensComponent {}
