@@ -14,5 +14,5 @@ import { SharedModule } from './app.module';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'sharedbuylists';
+  title = 'Listas compartilhada de compras';
 }
