@@ -1,8 +1,10 @@
 <div class="additem__container">
-    <mat-form-field>
-        <input matInput type="text" name="item" class="additem__input-label" id="additem__input--label" placeholder="Nome do produto a ser adicionado" [formControl]="productNameControl">    
-    </mat-form-field>
-    <button (click)="addItem()" mat-mini-fab color="primary">
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon>
-    </button>
+    
+        <mat-form-field class="additem__mat-input">
+            <input matInput type="text" name="item" class="additem__input-label" id="additem__input--label" placeholder="Nome do produto a ser adicionado" [formControl]="productNameControl">    
+        </mat-form-field>
+        <button (click)="addItem()" mat-mini-fab color="primary">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon>
+        </button>
+    
 </div>

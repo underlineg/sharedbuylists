@@ -16,5 +16,6 @@ export class AddItensComponent {
   
   addItem(){
     this.productNameEmmiter.emit( String( this.productNameControl.getRawValue()) )
+    this.productNameControl.setValue("");
   }
 }
