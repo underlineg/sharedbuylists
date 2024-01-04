@@ -6,11 +6,19 @@ import { AddItensComponent } from './modules/itens/add-itens/add-itens.component
 import { ListItensComponent } from './modules/itens/list-itens/list-itens.component';
 import { ItemComponent } from './modules/itens/item/item.component';
 import { ReactiveFormsModule } from "@angular/forms";
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
+
 
 
 @NgModule({
   declarations: [HistoricComponent, ItensComponent, LoginComponent, AddItensComponent, ListItensComponent, ItemComponent],
   exports: [HistoricComponent, ItensComponent, LoginComponent, AddItensComponent, ListItensComponent, ItemComponent],
-  imports: [ReactiveFormsModule]
+  imports: [ReactiveFormsModule, MatButtonModule, MatIconModule,
+    MatDividerModule, MatFormFieldModule, MatInputModule]
 })
 export class SharedModule { }

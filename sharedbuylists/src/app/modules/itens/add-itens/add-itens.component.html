@@ -1,4 +1,8 @@
 <div class="additem__container">
-    <input type="text" name="item" class="additem__input-label" id="additem__input--label" placeholder="Nome do produto" [formControl]="productNameControl">
-    <button (click)="addItem(  )">+</button>
+    <mat-form-field>
+        <input matInput type="text" name="item" class="additem__input-label" id="additem__input--label" placeholder="Nome do produto" [formControl]="productNameControl">    
+    </mat-form-field>
+    <button (click)="addItem()" mat-mini-fab color="primary">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add_circle"></mat-icon>
+    </button>
 </div>

@@ -16,5 +16,6 @@ export class AddItensComponent {
   
   addItem(){
     this.productNameOutput = String( this.productNameControl.getRawValue() )
+    console.log(this.productNameOutput)
   }
 }
