@@ -7,4 +7,9 @@ import { Component, Output } from '@angular/core';
   styleUrl: './itens.component.scss'
 })
 
-export class ItensComponent {}
+export class ItensComponent {
+
+  addItem(item:string){
+    console.log(item)
+  }
+}
