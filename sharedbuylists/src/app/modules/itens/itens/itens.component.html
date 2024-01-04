@@ -1,9 +1,12 @@
 <h1>Esta é sua lista de compras:</h1>
-<div>
+<div class="container-itens__add">
     <add-itens (productNameEmmiter)="addItem($event)"></add-itens>
-    <list-itens></list-itens>
 </div>
+<div class="container-itens__list" >
+    <ng-template #containerListItens>
 
-<div>
+    </ng-template>
+</div>
+<div class="container-total">
     Valor total da compra: R$ 0,00
 </div>

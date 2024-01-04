@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './item.component.scss'
 })
 export class ItemComponent {
-  @Input() product_name: string = "PRODUCT NAME";
+  @Input() productName: string = "";
 }

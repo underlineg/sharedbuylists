@@ -13,11 +13,8 @@ export class AddItensComponent {
   productNameControl = new FormControl("");
 
   @Output() productNameEmmiter = new EventEmitter<string>();
-
   
   addItem(){
-    // this.productNameOutput = string( this.productNameControl.getRawValue() )
     this.productNameEmmiter.emit( String( this.productNameControl.getRawValue()) )
-    console.log(this.productNameEmmiter)
   }
 }
