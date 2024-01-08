@@ -11,6 +11,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 
 
@@ -19,6 +21,6 @@ import { MatInputModule } from '@angular/material/input';
   declarations: [HistoricComponent, ItensComponent, LoginComponent, AddItensComponent,  ItemComponent],
   exports: [HistoricComponent, ItensComponent, LoginComponent, AddItensComponent,  ItemComponent],
   imports: [ReactiveFormsModule, MatButtonModule, MatIconModule,
-    MatDividerModule, MatFormFieldModule, MatInputModule]
+    MatDividerModule, MatFormFieldModule, MatInputModule, MatCheckboxModule]
 })
 export class SharedModule { }

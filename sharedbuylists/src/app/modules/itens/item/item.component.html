@@ -1,7 +1,13 @@
 <div>
-    <input type="checkbox">
-    {{productName}}
+    <mat-checkbox color="primary">
+        {{productName}}
+    </mat-checkbox>
+    
+    
     <input type="text" name="quantity" class="item__input-price" id="item__input--label" placeholder="QTD">
     <input type="text" name="price" class="item__input-price" id="item__input--label" placeholder="Preço do produto">
-    <button class="item__button-done">comprado</button>
+    
+    <button mat-mini-fab color="primary">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="done_circle">done</mat-icon>
+    </button>
 </div>
