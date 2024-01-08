@@ -1,0 +1,38 @@
+.item__component--container{
+    position: relative;
+    display: flex;
+}
+.item__component--slash{
+    width: calc(100% - 43px);
+    border:1px solid #a3a3a3;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    z-index: 999;
+}
+
+.item__component--minor{
+    padding: 1rem 0;
+}
+    
+
+.item__component--qtd, .item__component--price {
+    white-space: nowrap;
+    margin: 0 1.2rem 1.7rem;
+}
+.item__component--name-strike{
+    text-decoration: line-through;
+}
+
+.item__component--name-component{
+    width: 80%;
+    padding-top: 1rem;
+}
+
+.item__component--qtt-container{
+    display: flex;
+}
+
+.item__input-price{
+    width: 30%;
+}

@@ -5,13 +5,15 @@ import { LoginComponent } from './modules/login/login/login.component';
 import { AddItensComponent } from './modules/itens/add-itens/add-itens.component';
 
 import { ItemComponent } from './modules/itens/item/item.component';
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule  } from "@angular/forms";
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatFormFieldModule, FloatLabelType}  from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+
+import { CommonModule } from '@angular/common';
 
 
 
@@ -20,7 +22,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 @NgModule({
   declarations: [HistoricComponent, ItensComponent, LoginComponent, AddItensComponent,  ItemComponent],
   exports: [HistoricComponent, ItensComponent, LoginComponent, AddItensComponent,  ItemComponent],
-  imports: [ReactiveFormsModule, MatButtonModule, MatIconModule,
-    MatDividerModule, MatFormFieldModule, MatInputModule, MatCheckboxModule]
+  imports: [ReactiveFormsModule, MatButtonModule, MatIconModule, 
+    MatDividerModule, MatFormFieldModule, MatInputModule, MatCheckboxModule, CommonModule, FormsModule]
 })
 export class SharedModule { }
