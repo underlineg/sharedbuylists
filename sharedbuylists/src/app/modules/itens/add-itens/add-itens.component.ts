@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 
 
@@ -10,12 +10,29 @@ import { FormControl } from '@angular/forms';
   styleUrl: './add-itens.component.scss'
 })
 export class AddItensComponent {
-  productNameControl = new FormControl("");
+  productNameControl = new FormControl('', [Validators.required, Validators.minLength(3)]);
 
   @Output() productNameEmmiter = new EventEmitter<string>();
   
   addItem(){
-    this.productNameEmmiter.emit( String( this.productNameControl.getRawValue()) )
-    this.productNameControl.setValue("");
+    
+    const currentValidators = this.productNameControl.validator;
+
+    if (!this.productNameControl.hasError('required')) {
+      this.productNameEmmiter.emit( String( this.productNameControl.getRawValue()) )
+
+      this.productNameControl.clearValidators();
+      this.productNameControl.setValue("", { emitEvent: false });
+      
+      this.productNameControl.setValidators( currentValidators )
+    }
   }
+
+  getErrorMessage() {
+    if (this.productNameControl.hasError('required')) {
+      return 'Você deve preencher corretamente o nome do produto';
+    }
+    return 'Você deve preencher corretamente o nome do produto';
+  }
+
 }

@@ -3,20 +3,23 @@
     <div class="item__component--name-component">
         <mat-checkbox color="primary" 
             [ngClass]="{'item__component--name-strike': isSelected}" 
-            (click)="closeItem()"
-            [(ngModel)]="isSelected"
+            (change)="onCheckboxChange($event)"
+            [checked]="isSelected"
+            [disabled]="itemQdtFormControl.invalid || itemPriceFormControl.invalid"
         >
-            {{productName}}
+            <mat-label>{{productName}}</mat-label>
         </mat-checkbox>
     </div>
 
     <mat-form-field class="item__component__mat-input" *ngIf="!isSelected">
         <mat-label>Quantidade</mat-label>
-        <input matInput type="text" name="itemQttd"  [formControl]="itemQdtFormControl">
+        <input matInput type="tel" name="itemQttd" required  [formControl]="itemQdtFormControl" (input)="numbersOnly($event)">
+        <mat-error *ngIf="itemQdtFormControl.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
     <mat-form-field class="item__component__mat-input"  *ngIf="!isSelected">
         <mat-label>Preço</mat-label>
-        <input matInput type="text" name="itemPrice"  [formControl]="itemPriceFormControl">    
+        <input matInput type="tel" name="itemPrice" required  [formControl]="itemPriceFormControl">
+        <mat-error *ngIf="itemPriceFormControl.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
 
     <!-- transform it in an component in future -->
@@ -29,12 +32,12 @@
     </div>
     
 
-    <button mat-mini-fab color="primary" (click)="closeItem()">
+    <button mat-mini-fab color="primary" class="item__component--btn" (click)="closeItem()">
         <mat-icon aria-hidden="false" aria-label="Done" fontIcon="done" *ngIf="!isSelected">done</mat-icon>    
         <mat-icon aria-hidden="false" aria-label="Back status" fontIcon="undo" *ngIf="isSelected">back</mat-icon>
     </button>
 
-    <button mat-mini-fab color="warn" (click)="deleteItem()">
+    <button mat-mini-fab color="warn" class="item__component--btn" (click)="deleteItem()">
         <mat-icon aria-hidden="false" aria-label="Delete item" fontIcon="close">delete</mat-icon>
     </button>
 
