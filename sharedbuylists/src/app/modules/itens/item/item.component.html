@@ -1,7 +1,42 @@
-<div>
-    <input type="checkbox">
-    {{product_name}}
-    <input type="text" name="quantity" class="item__input-price" id="item__input--label" placeholder="QTD">
-    <input type="text" name="price" class="item__input-price" id="item__input--label" placeholder="Preço do produto">
+<div class="item__component--container" *ngIf="!isDestroyed">
+    
+    <div class="item__component--name-component">
+        <mat-checkbox color="primary" 
+            [ngClass]="{'item__component--name-strike': isSelected}" 
+            (click)="closeItem()"
+            [(ngModel)]="isSelected"
+        >
+            {{productName}}
+        </mat-checkbox>
+    </div>
+
+    <mat-form-field class="item__component__mat-input" *ngIf="!isSelected">
+        <mat-label>Quantidade</mat-label>
+        <input matInput type="text" name="itemQttd"  [formControl]="itemQdtFormControl">
+    </mat-form-field>
+    <mat-form-field class="item__component__mat-input"  *ngIf="!isSelected">
+        <mat-label>Preço</mat-label>
+        <input matInput type="text" name="itemPrice"  [formControl]="itemPriceFormControl">    
+    </mat-form-field>
+
+    <!-- transform it in an component in future -->
+    <div *ngIf="isSelected" class="item__component--qtd item__component--minor">
+        <strong>Qtd:</strong> {{qtd}}
+    </div>
+
+    <div *ngIf="isSelected" class="item__component--price item__component--minor">
+        <strong>Preço:</strong> R${{price}}
+    </div>
+    
+
+    <button mat-mini-fab color="primary" (click)="closeItem()">
+        <mat-icon aria-hidden="false" aria-label="Done" fontIcon="done" *ngIf="!isSelected">done</mat-icon>    
+        <mat-icon aria-hidden="false" aria-label="Back status" fontIcon="undo" *ngIf="isSelected">back</mat-icon>
+    </button>
+
+    <button mat-mini-fab color="warn" (click)="deleteItem()">
+        <mat-icon aria-hidden="false" aria-label="Delete item" fontIcon="close">delete</mat-icon>
+    </button>
+
     
 </div>
