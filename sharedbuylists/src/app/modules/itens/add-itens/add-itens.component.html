@@ -1,5 +1,5 @@
 <div class="additem__container">
-    
+    <form>
         <mat-form-field class="additem__mat-input">
             <mat-label>Nome do produto a ser adicionado</mat-label>
             <input matInput type="text" name="item" class="additem__input-label" id="additem__input--label" required [formControl]="productNameControl"> 
@@ -10,5 +10,5 @@
         <button (click)="addItem()" mat-mini-fab color="primary">
             <mat-icon aria-hidden="false" aria-label="Add item" fontIcon="add_circle"></mat-icon>
         </button>
-    
+    </form>
 </div>

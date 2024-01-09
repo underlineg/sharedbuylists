@@ -15,12 +15,14 @@ export class AddItensComponent {
   @Output() productNameEmmiter = new EventEmitter<string>();
   
   addItem(){
-    
     const currentValidators = this.productNameControl.validator;
 
-    if (!this.productNameControl.hasError('required')) {
+    if(!this.productNameControl.getRawValue()?.length){
+      this.productNameControl.setValue("", { emitEvent: true });
+    }
+    if (this.productNameControl.valid && this.productNameControl.getRawValue()?.length) {
       this.productNameEmmiter.emit( String( this.productNameControl.getRawValue()) )
-
+      
       this.productNameControl.clearValidators();
       this.productNameControl.setValue("", { emitEvent: false });
       
