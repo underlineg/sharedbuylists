@@ -23,15 +23,6 @@ export class ItemComponent {
     this.isDestroyed = true;
   }
 
-  numbersOnly(e:any){
-    
-    if( isNaN(Number(this.itemQdtFormControl.getRawValue()))){
-      
-      e.preventDefault();
-    } 
-  }
-
-
   closeItem(){
     this.itemQdtFormControl.markAsTouched()
     this.itemPriceFormControl.markAsTouched();

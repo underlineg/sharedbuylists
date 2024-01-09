@@ -1,4 +1,4 @@
-import { Component,  ComponentRef,  ViewChild, ViewContainerRef } from '@angular/core';
+import { Component,  ViewChild, ViewContainerRef } from '@angular/core';
 import { ItemComponent } from '../item/item.component';
 
 @Component({
