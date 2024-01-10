@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
 
@@ -16,8 +16,11 @@ export class ItemComponent {
   isSelected:boolean = false;
   itemQdtFormControl = new FormControl('', [Validators.required, Validators.minLength(1), Validators.pattern(/^-?\d*(\.\d+)?$/)]);
   itemPriceFormControl = new FormControl('', [Validators.required, Validators.minLength(1), Validators.pattern(/^-?\d*(\,\d+)?$/)]);
-  qtd?:any = 0;
-  price?:any = 0;
+  qtd:number = 0;
+  price:number = 0;
+  totalToSend:number = 0;
+
+  @Output() totalValueEmitter = new EventEmitter<number>();
 
   deleteItem(){
     this.isDestroyed = true;
@@ -33,8 +36,9 @@ export class ItemComponent {
         return
       }
       this.isSelected = true;
-      this.qtd =  this.itemQdtFormControl.getRawValue()
-      this.price = this.itemPriceFormControl.getRawValue()
+      this.qtd =  Number(this.itemQdtFormControl.getRawValue())
+      this.price = Number(this.itemPriceFormControl.getRawValue()?.replace(",", "."))
+      this.calcTotalValue();
     }
   }
 
@@ -55,6 +59,12 @@ export class ItemComponent {
       return 'Você deve preencher corretamente um valor';
     }
     return 'Você deve preencher corretamente um valor';
+  }
+
+  calcTotalValue(){
+    this.totalToSend = this.qtd*this.price;
+    this.totalValueEmitter.emit( this.totalToSend )
+    console.log("Sending data outside", this.totalToSend)
   }
 
 }
