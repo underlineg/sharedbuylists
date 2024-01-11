@@ -13,7 +13,7 @@
 
     <mat-form-field class="item__component__mat-input" *ngIf="!isSelected">
         <mat-label>Quantidade</mat-label>
-        <input matInput type="tel" name="itemQttd" required  [formControl]="itemQdtFormControl" (input)="numbersOnly($event)">
+        <input matInput type="tel" name="itemQttd" required  [formControl]="itemQdtFormControl">
         <mat-error *ngIf="itemQdtFormControl.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
     <mat-form-field class="item__component__mat-input"  *ngIf="!isSelected">

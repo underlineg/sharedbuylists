@@ -1,0 +1,16 @@
+.list-itens__foter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between
+}
+
+.list-itens__total, .list-itens__share{
+    align-items: center;
+    display: flex;
+}
+
+.list-itens__share span{
+    display: inline-block;
+    margin-right: 1rem;
+}

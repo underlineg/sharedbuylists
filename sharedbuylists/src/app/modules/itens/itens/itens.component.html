@@ -1,13 +1,21 @@
-<h1>Esta é sua lista de compras:</h1>
-<div class="container-itens__add">
+<div class="lists-itens__add">
     <add-itens (productNameEmmiter)="addItem($event)"></add-itens>
 </div>
-<div class="container-itens__list" >
-    
-    <ng-template #containerListItens>
+
+<h2>Esta é sua lista de compras:</h2>
+<div class="list-itens__list-complete" >
+    <ng-template #containerListItens (totalValueEmitter)="getTotalValue(e)">
         
     </ng-template>
 </div>
-<div class="container-total">
-    Valor total da compra: R$ 0,00
-</div>
+<footer class="list-itens__foter">
+    <div class="list-itens__total" >
+        Valor total da compra: R$ 0,00
+    </div>
+    <div  class="list-itens__share">
+        <span>Compartilhe esta lista:</span>
+        <button mat-mini-fab color="primary" class="list-itens__share--btn" (click)="shareList()">
+            <mat-icon aria-hidden="false" aria-label="Done" fontIcon="share">done</mat-icon>    
+        </button>
+    </div>
+</footer>
