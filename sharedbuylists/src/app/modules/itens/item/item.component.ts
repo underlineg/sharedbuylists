@@ -18,12 +18,14 @@ export class ItemComponent {
   itemPriceFormControl = new FormControl('', [Validators.required, Validators.minLength(1), Validators.pattern(/^-?\d*(\,\d+)?$/)]);
   qtd:number = 0;
   price:number = 0;
-  totalToSend:number = 0;
+  totalToSend:any = new Object();
 
   @Output() totalValueEmitter = new EventEmitter<number>();
+  @Output() removeElementEmitter = new EventEmitter<string>()
 
   deleteItem(){
     this.isDestroyed = true;
+    this.removeElementEmitter.emit(this.productName)
   }
 
   closeItem(){
@@ -62,9 +64,12 @@ export class ItemComponent {
   }
 
   calcTotalValue(){
-    this.totalToSend = this.qtd*this.price;
+    this.totalToSend = {
+      [this.productName]:{
+        'qtd': this.qtd,
+        'price': this.price
+      }
+    }
     this.totalValueEmitter.emit( this.totalToSend )
-    console.log("Sending data outside", this.totalToSend)
   }
-
 }
