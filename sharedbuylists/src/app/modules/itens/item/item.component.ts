@@ -65,10 +65,7 @@ export class ItemComponent {
 
   calcTotalValue(){
     this.totalToSend = {
-      [this.productName]:{
-        'qtd': this.qtd,
-        'price': this.price
-      }
+      [this.productName]: this.qtd * this.price
     }
     this.totalValueEmitter.emit( this.totalToSend )
   }

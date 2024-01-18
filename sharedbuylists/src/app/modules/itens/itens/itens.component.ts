@@ -13,6 +13,9 @@ export class ItensComponent {
   @ViewChild('containerListItens', { read: ViewContainerRef }) vcr!: ViewContainerRef;
   componentRef!: ComponentRef<any>;
   arrItens:any = {};
+  sum:number = 0;
+  totalValueSum:any;
+  stringSum:string = "";
 
   //recebe o valor vindo do add-item
   addItem(item:string){
@@ -29,9 +32,27 @@ export class ItensComponent {
 
   removeItem(e:any){
     delete this.arrItens[e]
+    console.log(e)
+    this.sumValues()
+
+    console.log(this.arrItens)
   }
 
   getTotalValue(value:any){
-      Object.assign(this.arrItens, value)
+    Object.assign(this.arrItens, value)
+    console.log(this.arrItens)
+    this.sumValues()    
+  }
+  sumValues(){
+    for (this.totalValueSum of Object.values(this.arrItens)) {
+      this.sum += this.totalValueSum;
+    }
+    this.stringSum = this.sum.toLocaleString('pt-BR', { 
+      style: "currency", 
+      currency: "BRL", 
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2 }
+    );
+    this.sum = 0;
   }
 }
