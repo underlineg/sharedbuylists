@@ -4,6 +4,8 @@ import { HistoricComponent } from './modules/historic/historic.component';
 import { ItensComponent } from './modules/itens/itens/itens.component'; 
 import { LoginComponent } from './modules/login/login.component';
 import { AddItensComponent } from './modules/itens/add-itens/add-itens.component';
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 
 
 //navigation

@@ -4,7 +4,8 @@ import { ItensComponent } from './modules/itens/itens/itens.component';
 import { HistoricComponent } from './modules/historic/historic.component';
 
 export const routes: Routes = [
-    {'path': '', component: LoginComponent},
+    {'path': '', component: ItensComponent},
+    {'path': 'login', component: LoginComponent},
     {'path': 'lists', component: ItensComponent},
     {'path': 'previous', component: HistoricComponent},
 ];
